@@ -18,6 +18,8 @@ public class BeerSelect extends HttpServlet{
 		List result = be.getBrands(c);
 		
 		req.setAttribute("styles", result);
+
+		String email = getServletConfig().getInitParameter("adminEmail");
 		RequestDispatcher view = req.getRequestDispatcher("result.jsp");
 		// try{
 			view.forward(req,res);
